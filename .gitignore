@@ -1,0 +1,11 @@
+
+src/.DS_Store
+.env
+.DS_Store
+train_data.pkl
+training_data.pkl
+/venv
+/src/mfanalyser/__pycache__
+/src/mfanalyser/tools/__pycache__
+poetry.lock
+db/chroma.sqlite3

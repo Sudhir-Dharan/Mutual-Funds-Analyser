@@ -1,0 +1,130 @@
+#1. Asset Class
+#Equity Funds: Invest primarily in stocks of companies. Examples: Large-cap, mid-cap, small-cap funds.
+#Debt Funds: Invest in fixed-income securities like bonds, debentures, and treasury bills.
+#Hybrid Funds: Combine equity and debt investments in a specified proportion.
+#Commodity Funds: Focus on commodities like gold (e.g., gold ETFs or gold funds).
+#2. Investment Objective
+#Growth Funds: Aim for long-term capital appreciation by investing in equity or equity-related instruments.
+#Income Funds: Focus on generating steady income by investing in debt securities.
+#Tax-Saving Funds (ELSS): Provide tax benefits under Section 80C of the Income Tax Act.
+#Capital Protection Funds: Aim to protect the principal while generating moderate returns.
+#3. Structure
+#Open-Ended Funds: Allow investors to buy or sell units at any time.
+#Close-Ended Funds: Have a fixed maturity period and can only be traded on exchanges.
+#Interval Funds: Combine features of both open-ended and close-ended funds, with specified transaction windows.
+#4. Risk Profile
+#Low-Risk Funds: Typically include liquid funds, overnight funds, or ultra-short-term debt funds.
+#Moderate-Risk Funds: Includes hybrid funds or short-term bond funds.
+#High-Risk Funds: Includes equity funds, sectoral funds, and thematic funds.
+#5. Market Capitalization (for Equity Funds)
+#Large-Cap Funds: Invest in large, well-established companies.
+#Mid-Cap Funds: Focus on medium-sized companies with growth potential.
+# Small-Cap Funds: Target small companies with high growth opportunities but higher risk.
+#6. Investment Style
+#Active Funds: Actively managed by fund managers aiming to outperform a benchmark index.
+#Passive Funds: Replicate the performance of an index (e.g., Nifty 50, Sensex).
+#7. Thematic or Sectoral Focus
+#Sectoral Funds: Invest in specific sectors like banking, IT, or pharmaceuticals.
+#Thematic Funds: Focus on broader themes like ESG (Environmental, Social, and Governance), rural development, or infrastructure.
+#8. Tenure of Investment
+#Liquid Funds: Invest in short-term securities with a tenure of up to 91 days.
+#Short-Term Funds: Debt funds with a duration of 1–3 years.
+#Long-Term Funds: Equity or debt funds designed for horizons of 5 years or more.
+#9. Tax Implications
+#Equity-Oriented Funds: Taxed as equity with Short-Term Capital Gains (STCG) at 15% and Long-Term Capital Gains (LTCG) above ₹1 lakh at 10%.
+#Debt-Oriented Funds: Taxed with STCG at the investor’s income tax slab and LTCG at 20% with indexation benefits.
+#Tax-Free Funds: Such as ELSS, offer tax benefits under Section 80C.
+#10. Geographical Exposure
+#Domestic Funds: Invest primarily in Indian markets.
+#International Funds: Invest in overseas markets or companies.
+#11. Fund Size
+#Small-Sized Funds: Low assets under management (AUM).
+#Mid-Sized Funds: Moderate AUM.
+#Large-Sized Funds: High AUM, providing stability and lower expense ratios.
+#12. Payout Options
+#Dividend Option: Provides periodic dividends to investors.
+#Growth Option: Reinvests returns, leading to compounding.
+#Reinvestment Option: Dividends declared are reinvested in the same fund.
+
+research_task:
+  description: >
+    Search the internet focusing specifically on the topic,asset class, investment objective, structure, risk profile, market capitalization, investment style, thematic or sectoral focus, tenure of investment, tax implications, geographical exposure, fund size, payout options provided & fetch the latest information (from last 2 months).
+    Conduct thorough financial research & positive sentiment analysis based on the mutual fund details like Topic,Asset Class, Investment Objective, Structure, Risk Profile, Market Capitalization, Investment Style, Thematic or Sectoral Focus, Tenure of Investment, Tax Implications, Geographical Exposure, Fund Size, Payout Options provided & fetch the latest information.
+    Fetch the mutual funds which have a lot of positive sentiment in the news & social media.
+    Make sure to fetch the information from reliable sources & relevant sources.
+    Topic:
+    {Topic},
+    Asset Class of Mutual Fund:{Asset Class},
+    Investment Objective of Mutual Fund:{Investment Objective},
+    Structure of Mutual Fund:{Structure},
+    Risk Profile of Mutual Fund:{Risk Profile},
+    Market Capitalization of Mutual Fund:{Market Capitalization},
+    Investment Style of Mutual Fund:{Investment Style},
+    Thematic or Sectoral Focus of Mutual Fund:{Thematic or Sectoral Focus},
+    Tenure of Investment of Mutual Fund:{Tenure of Investment},
+    Tax Implications of Mutual Fund:{Tax Implications},
+    Geographical Exposure of Mutual Fund:{Geographical Exposure},
+    Fund Size of Mutual Fund:{Fund Size},
+    Payout Options of Mutual Fund:{Payout Options},
+  expected_output: >  
+    List of top mutual funds Scheme Names comma separated only sorted by positive sentiment score in a descending order. Do not include any other information.
+
+data_gatherer_task:
+  description: >
+    split the Search each mutual fund name from the research task & create a list.
+    append each mutual fund name with "Direct" & search by append it to "latest NAV, expense ratio, 1 year return, 2 years return, 5 years return site:moneycontrol.com"
+    for each search pick the first latest & relevant result from the search 
+    for each site scrape the data from the website to get the latest NAV, expense ratio, 1 year return, 2 years returns, 5 years returns,  for the specific mutual fund.
+    convert the data into a tabular structure to be used for analysis.
+  expected_output: >
+    Collate all the data for the mutual funds & presented in a tabular structure to be used for analysis.
+
+analysis_task:
+  description: >
+    Map the mutual fund data to the research findings & data gatherer tasks. Strictly follow the research findings & data gatherer tasks - Do not deviate from the research findings & data gatherer tasks.
+    Analyze the mutual fund data & provide the analysis with a performance score from 0 to 100.
+    Pick up the best practices for financial analysis from https://www.smallcase.com/learn/how-to-research-and-analyse-mutual-funds/
+    for the analysis consider the following parameters:
+    "
+      1. Assess Historical Performance
+      Consistency: Look for funds that have delivered consistent returns over 3, 5, and 10 years rather than focusing only on short-term performance.
+      Benchmark Comparison: Ensure the fund has consistently outperformed its benchmark index and category peers.
+      Rolling Returns: Check rolling returns (e.g., 1-year rolling returns over the past 5 years) to gauge performance in different market conditions.
+      2. Evaluate Fund Manager Expertise
+      Experience: Research the track record and experience of the fund manager in managing the fund and other schemes.
+      Investment Style: Understand whether the manager follows a value, growth, or blended approach and ensure it aligns with your investment goals.
+      3. Expense Ratio
+      Lower expense ratios can significantly impact returns, especially for long-term investments. Compare expense ratios of similar funds within the same category.
+      4. Risk-Adjusted Returns
+      Analyze metrics like Sharpe Ratio, Alpha, and Beta:
+      Sharpe Ratio: Measures risk-adjusted returns; higher is better.
+      Alpha: Indicates the fund's ability to beat the market; positive Alpha is desirable.
+      Beta: Shows volatility compared to the market; choose funds with Beta aligned to your risk appetite.
+      5. Understand Fund Objectives and Asset Allocation
+      Choose funds that match your financial goals (e.g., equity funds for long-term growth, debt funds for stability, hybrid funds for balance).
+      Diversify across sectors and avoid funds overly concentrated in one sector.
+      6. AUM (Assets Under Management)
+      Select funds with adequate AUM, as funds with very low AUM may face liquidity issues, while excessively large funds might struggle to maintain alpha.
+      7. Consistency in Investment Philosophy
+      Check if the fund house adheres to its stated investment strategy and philosophy across market cycles.
+      8. Analyze Market Conditions
+      Consider the current economic environment and how different categories of funds (e.g., large-cap, mid-cap, small-cap, or debt funds) might perform in such scenarios.
+      9. Review Portfolio Composition
+      Assess the top holdings, sector allocation, and concentration of the portfolio to ensure alignment with your risk tolerance.
+      10. Look at Exit Load and Lock-in Periods
+      Consider funds with low or no exit loads unless you're investing in ELSS (Equity-Linked Savings Schemes) for tax benefits.
+      "
+    Consider the topic provided as well
+    Topic:
+    {Topic}
+  expected_output: >
+    The structured list (including the SchemeName & other details) of top 10 performing mutual funds based on the score(from 0 to 100) from the analysis,   performance, risk, expense ratio, etc. Also share the potential risks & challenges in investing in the mutual funds. Share the potential gains & returns in investing in the mutual funds.
+
+advisor_task:
+  description: >
+    Provide investment advice to the user based on the financial data & analysis done in the previous tasks.
+    Make sure you provide the best possible advice to the user based on the financial data & analysis.
+    Link back the analysis details to the recommendations so that it provides transparent advice.
+    Support each recommendation with a detailed explanation.
+  expected_output: >
+    Provide a detail report on the analysis - It should include the list of mutual funds & there respective details like the fund name, fund house, fund category, score from the analysis, latest NAV,AUM, expense ratio, potential risks & challenges in a detailed manner, potential gains & returns ordered by the performance. Also, provide a summarized advice on the market.
