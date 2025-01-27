@@ -10,11 +10,11 @@ CrewAI is designed to facilitate the collaboration of role-playing AI agents. In
 - **Install Dependencies**: Run `poetry lock && poetry install`.
 - **Customize**: Modify `src/mfanalyser/main.py` to add custom inputs for your agents and tasks.
 - **Customize Further**: Check `src/mfanalyser/config/agents.yaml` to update your agents and `src/mfanalyser/config/tasks.yaml` to update your tasks.
-- **Custom Tools**: You can find custom tools at `mfanalyser/src/tools/`.
+- **Custom Tools**: You can write further custom tools at `mfanalyser/src/tools/`. An example tool with gemini-pro integration has been provided for reference.
 - **Execute the Script**: Run `poetry run mfanalyser` and input your project details.
 
 ## Details & Explanation
-- **Running the Script**: Execute `poetry run mfanalyser`. The script will leverage the CrewAI framework to find the best mutual funds for the given inputs & generate a detailed report.
+- **Running the Script**: Execute `poetry run mfanalyser`. The script will leverage the CrewAI framework to find the best mutual funds for the given inputs, analyse & rank them & generate a detailed report.
 - **Running Training**: Execute `poetry run train n` where n is the number of training iterations.
 - **Key Components**:
   - `src/mfanalyser/main.py`: Main script file.
