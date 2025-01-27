@@ -115,7 +115,7 @@ The agents and tasks are defined in the respective YAML files:
    - Update the `agents.yaml` file with the new agent's role, goal, and backstory.
 2. **To Add or Modify Tasks**:
    - Update the `tasks.yaml` file with the new task's description, expected output, and assigned agents.
-3. Implement any additional logic or tools required in `src/mfanalyser`.
+3. Implement any additional logic or tools required in `src/mfanalyser/crew.py`.
 
 This structure ensures flexibility and scalability for customising the mutual funds analyser.
 
