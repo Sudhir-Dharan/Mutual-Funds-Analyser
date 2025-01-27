@@ -6,10 +6,6 @@
 CrewAI is designed to facilitate the collaboration of role-playing AI agents. In this example, these agents work together to identify & rank mutual funds based on the given inputs.
 
 ## Running the Script
-It uses GPT-4o by default so you should have access to that to run it.
-
-***Disclaimer:** This will use gpt-4o unless you change it to use a different model, and by doing so it may incur different costs.*
-
 - **Configure Environment**: Copy `.env.example` and set up the environment variables for [OpenAI](https://platform.openai.com/api-keys) and other tools as needed.
 - **Install Dependencies**: Run `poetry lock && poetry install`.
 - **Customize**: Modify `src/mfanalyser/main.py` to add custom inputs for your agents and tasks.
