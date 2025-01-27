@@ -15,7 +15,7 @@ CrewAI is designed to facilitate the collaboration of role-playing AI agents. In
 
 ## Details & Explanation
 - **Running the Script**: Execute `poetry run mfanalyser`. The script will leverage the CrewAI framework to find the best mutual funds for the given inputs, analyse & rank them & generate a detailed report.
-- **Running Training**: Execute `poetry run train n` where n is the number of training iterations.
+- **Running Training**: Execute `poetry run train n <pkl file>` where n is the number of training iterations & pkl file location to store training data.
 - **Key Components**:
   - `src/mfanalyser/main.py`: Main script file.
   - `src/mfanalyser/crew.py`: Main crew file where agents and tasks come together, and the main logic is executed.
