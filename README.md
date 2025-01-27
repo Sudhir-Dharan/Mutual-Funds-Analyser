@@ -29,3 +29,8 @@ It uses GPT-4o by default so you should have access to that to run it.
 
 ## License
 This project is released under the MIT License.
+
+## Disclaimer
+This tool was created for educational purposes only and should not be considered as financial recommendations or advice.
+
+
