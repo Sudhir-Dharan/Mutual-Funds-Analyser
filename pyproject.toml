@@ -5,8 +5,8 @@ description = "MF Analyzer using crewAI"
 authors = ["Sudhir Dharan <sudhir.dharan@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<=3.13"
-crewai = { extras = ["tools"], version = "^0.85.0" }
+python = ">=3.10,<3.13"
+crewai = { version = "^0.119.0", extras = ["tools"] }
 selenium = "^4.21.0"
 google-generativeai = "^0.8.4"
 
